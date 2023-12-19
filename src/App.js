@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Boton from './componentes/boton.jsx' // importar el componente boton para que funcione
+import logo from './img/logo.svg'; // importar una imagen a tráves de import
 
 function App() {
+  const manejarClic = () => {console.log('Clic')}
+
+  const reiniciarContador = () => { console.log('Reiniciar')}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <div className='logo-contenedor'> 
+        <img className='logo' src={logo} alt='Logo' />  
+      </div>
+      <div className='contenedor-principal'>
+        <Boton texto='Clic' esBotonClic={true} manejarClic={manejarClic} /> 
+        {/* boton true agrega a contador*/ }
+        <Boton texto='Reiniciar' esBotonClic={false} manejarClic={reiniciarContador}/>
+         {/* boton false reinicia contador*/ }
+      </div>
     </div>
   );
 }
